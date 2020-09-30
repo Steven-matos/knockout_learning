@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Visible</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.5.0.js"></script>
+
+    <script>
+      $(function () {
+        let myViewModel = function () {
+          this.showMessage = ko.observable(false);
+        };
+        ko.applyBindings(new myViewModel());
+      });
+    </script>
+  </head>
+  <body>
+    <input type="checkbox" data-bind="checked: showMessage" />
+    <h3 data-bind="visible: showMessage">Interesting feature in knockout!</h3>
+  </body>
+</html>
