@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Observables</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.5.0.js"></script>
+
+    <script>
+      $(function () {
+        var myViewModel = function (myCourse, myRating) {
+          this.course = ko.observable(myCourse);
+          this.rating = ko.observable(myRating);
+          this.courseResult = ko.computed(function () {
+            return (
+              "The course " +
+              this.course() +
+              " got a rating of " +
+              this.rating()
+            );
+          }, this);
+        };
+
+        ko.applyBindings(new myViewModel("Knockout js", 10));
+      });
+    </script>
+  </head>
+  <body>
+    <p>Course: <input data-bind="value: course" /></p>
+    <p>Rating: <input data-bind="value: rating" /></p>
+    <h3><span data-bind="text: courseResult"></span></h3>
+  </body>
+</html>

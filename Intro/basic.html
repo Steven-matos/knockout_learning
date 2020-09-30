@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.5.0.js"></script>
+    <script>
+      $(function () {
+        let myViewModel = {
+          course: "Knockout",
+          author: "Ayad",
+        };
+        // sets the viewModel to the data-bind according to the reference that is called
+        ko.applyBindings(myViewModel);
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      The course <u><span data-bind="text: course"></span></u> will be taught by
+      <b><span data-bind="text: author"></span></b>
+    </div>
+  </body>
+</html>

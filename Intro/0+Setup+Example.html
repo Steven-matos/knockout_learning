@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Setup Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.5.0.js"></script>
+
+    <script>
+      $(function () {
+        let myViewModel = {
+          course: "Knockout in Depth",
+          rating: 10,
+        };
+        ko.applyBindings(myViewModel, document.getElementById("withBinding"));
+      });
+    </script>
+  </head>
+  <body>
+    <div id="withBinding">
+      The course <b><span data-bind="text: course"></span></b> got a rating of
+      <b><span data-bind="text: rating"></span></b>.
+    </div>
+    <div id="noBinding">
+      The course <b><span data-bind="text: course"></span></b> is so nice.
+    </div>
+  </body>
+</html>
