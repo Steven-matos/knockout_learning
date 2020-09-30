@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Text</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.5.0.js"></script>
+
+    <script>
+      $(function () {
+        var myViewModel = {
+          participant: ko.observable(),
+        };
+
+        myViewModel.participant("everyone");
+        ko.applyBindings(myViewModel);
+      });
+    </script>
+  </head>
+  <body>
+    Welcome <i><span data-bind="text: participant"></span></i> to the knockout
+    course!!
+  </body>
+</html>
