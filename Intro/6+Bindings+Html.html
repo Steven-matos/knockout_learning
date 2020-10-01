@@ -6,12 +6,19 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
 
     <script>
-      $(function () {});
+      $(function () {
+        let myViewModel = {
+          participant: ko.observable(),
+        };
+        myViewModel.participant("<u><b>everyone</b></u>");
+        ko.applyBindings(myViewModel);
+      });
     </script>
   </head>
   <body>
     Welcome <i><span data-bind="text: participant"></span></i> to the new
     knockout course!!<br />
-    Welcome <i><span></span></i> to the new knockout course!!
+    Welcome <i><span data-bind="html: participant"></span></i> to the new
+    knockout course!!
   </body>
 </html>
